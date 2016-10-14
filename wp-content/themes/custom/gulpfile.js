@@ -10,7 +10,8 @@ var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     plumber = require('gulp-plumber'),
     bourbon = require("node-bourbon").includePaths,
-    neat = require("node-neat").includePaths;
+    neat = require("node-neat").includePaths,
+    sourcemaps = require('gulp-sourcemaps');
 
 //error handler for plumber
 function onError(err) {
@@ -21,15 +22,18 @@ function onError(err) {
 //sass to css
 gulp.task('sass', function() {
 return gulp.src('_ui/scss/**/*.scss')
+    .pipe( sourcemaps.init() )
     .pipe(plumber({errorHandler: onError}))
     .pipe(sass({
         includePaths: bourbon,
         includePaths: neat
     }))
+    .pipe( sourcemaps.init( { loadMaps: true } ) )
     .pipe(autoprefixer({
         browsers: ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'],
         cascade: false
     }))
+    .pipe( sourcemaps.write ('.') )
     .pipe(gulp.dest('_ui/css/'))
     .pipe(browserSync.reload({
         stream:true
@@ -37,19 +41,21 @@ return gulp.src('_ui/scss/**/*.scss')
 
 });
 
+// gulp.task('connect', function() {
+//     connect.server();
+// });
+
 //watches html, css, and js files to reload
 gulp.task('watch', ['browserSync', 'sass'], function() {
     gulp.watch('_ui/scss/**/*.scss', ['sass']);
-    gulp.watch('*.html', browserSync.reload);
+    gulp.watch('*.php', browserSync.reload);
     gulp.watch('_ui/js/**/*.js', browserSync.reload);
 });
 
 //reloads browser
 gulp.task('browserSync', function() {
     browserSync.init({
-        server: {
-            baseDir: ''
-        },
+        proxy: "http://localhost/"
     });
 });
 
