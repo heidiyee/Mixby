@@ -1,38 +1,32 @@
 <?php
-/**
- * The template for displaying pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages and that
- * other "pages" on your WordPress site will use a different template.
- *
- * @package WordPress
- * @subpackage Twenty_Fifteen
- * @since Twenty Fifteen 1.0
- */
+/*
+Theme Name: Mixby Wordpress
+Author: Heidi Yee
+Description: Learning Wordpress using Mixby site by customizing new theme based on twentyfifteen theme
+Version: 1.0.0
+*/
 
-get_header(); ?>
+get_header();
+$post_slug = $post->post_name;
+?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<section class="hero <?php echo $post_slug ?>">
+	<div class="container">
+		<?php if (is_front_page()) : ?>
+			<p class="headline">
+				<?php echo get_field('hero_text'); ?>
+			</p>
+		<?php else : ?>
 
-		<?php
-		// Start the loop.
-		while ( have_posts() ) : the_post();
+			<h2><?php echo the_title(); ?></h2>
+		<?php endif; ?>
 
-			// Include the page content template.
-			get_template_part( 'content', 'page' );
+	</div>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+</section>
 
-		// End the loop.
-		endwhile;
-		?>
 
-		</main><!-- .site-main -->
-	</div><!-- .content-area -->
+
+
 
 <?php get_footer(); ?>

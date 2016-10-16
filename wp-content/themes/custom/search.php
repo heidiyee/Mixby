@@ -1,11 +1,10 @@
 <?php
-/**
- * The template for displaying search results pages.
- *
- * @package WordPress
- * @subpackage Twenty_Fifteen
- * @since Twenty Fifteen 1.0
- */
+/*
+Theme Name: Mixby Wordpress
+Author: Heidi Yee
+Description: Learning Wordpress using Mixby site by customizing new theme based on twentyfifteen theme
+Version: 1.0.0
+*/
 
 get_header(); ?>
 

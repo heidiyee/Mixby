@@ -6,6 +6,51 @@ html {
   -webkit-box-sizing: inherit;
   box-sizing: inherit; }
 
+.container {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px; }
+  .container::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.headings {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  .headings:last-child {
+    margin-right: 0; }
+
+.to-the-right {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  .to-the-right:last-child {
+    margin-right: 0; }
+
+@media only screen and (min-width: 750px) {
+  .headings {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%; }
+    .headings:last-child {
+      margin-right: 0; }
+  .to-the-right {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 57.35098%;
+    margin-left: 8.5298%;
+    padding-top: 35px; }
+    .to-the-right:last-child {
+      margin-right: 0; } }
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -13,7 +58,7 @@ html {
 /*
 Theme Name: Mixby Wordpress
 Author: Heidi Yee
-Description: Learning Wordpress using Mixby site
+Description: Learning Wordpress using Mixby site by customizing new theme based on twentyfifteen theme
 Version: 1.0.0
 */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -56,10 +101,151 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+a {
+  text-decoration: none; }
+
 .offscreen {
   display: block;
   position: absolute;
   left: -999999px;
   top: -999999px; }
+
+header {
+  position: relative;
+  z-index: 10; }
+  header .nav-bar {
+    background-color: transparent;
+    height: 60px;
+    padding-top: 20px; }
+    header .nav-bar .container a svg {
+      width: auto;
+      height: 30px; }
+    header .nav-bar .container #nav-icon {
+      display: inline-block;
+      position: relative;
+      float: right;
+      width: 2.5em;
+      height: 30px;
+      cursor: pointer;
+      z-index: 20;
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg); }
+      header .nav-bar .container #nav-icon .line {
+        display: block;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 3.5px;
+        background: #15ADC3;
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: top .2s ease-in-out 0.2s,background 0.2s linear, visibility 0.1s ease 0.2s,-webkit-transform 0.2s ease-in-out;
+        transition: top .2s ease-in-out 0.2s,background 0.2s linear, visibility 0.1s ease 0.2s,-webkit-transform 0.2s ease-in-out;
+        transition: top .2s ease-in-out 0.2s,transform 0.2s ease-in-out, background 0.2s linear, visibility 0.1s ease 0.2s;
+        transition: top .2s ease-in-out 0.2s,transform 0.2s ease-in-out, background 0.2s linear, visibility 0.1s ease 0.2s,-webkit-transform 0.2s ease-in-out; }
+        header .nav-bar .container #nav-icon .line:nth-child(1) {
+          top: 5px; }
+        header .nav-bar .container #nav-icon .line:nth-child(2) {
+          top: 13px;
+          visibility: visible; }
+        header .nav-bar .container #nav-icon .line:nth-child(3) {
+          top: 21px; }
+      header .nav-bar .container #nav-icon.open .line {
+        -webkit-transition: top 0.2s ease-in-out, visibility 0.2s ease 0.1s, -webkit-transform 0.2s ease-in-out 0.2s;
+        transition: top 0.2s ease-in-out, visibility 0.2s ease 0.1s, -webkit-transform 0.2s ease-in-out 0.2s;
+        transition: top 0.2s ease-in-out, transform 0.2s ease-in-out 0.2s, visibility 0.2s ease 0.1s;
+        transition: top 0.2s ease-in-out, transform 0.2s ease-in-out 0.2s, visibility 0.2s ease 0.1s, -webkit-transform 0.2s ease-in-out 0.2s; }
+        header .nav-bar .container #nav-icon.open .line:nth-child(1) {
+          top: 13px;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg); }
+        header .nav-bar .container #nav-icon.open .line:nth-child(2) {
+          visibility: hidden; }
+        header .nav-bar .container #nav-icon.open .line:nth-child(3) {
+          top: 13px;
+          -webkit-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg); }
+    header .nav-bar .container #nav-links {
+      position: absolute;
+      background-color: #fff;
+      top: 0;
+      left: 100%;
+      width: 0;
+      height: 100vh;
+      overflow: hidden;
+      z-index: 3;
+      -webkit-transition: width .25s ease-in-out, left 0.25s ease-in-out;
+      transition: width .25s ease-in-out, left 0.25s ease-in-out; }
+      header .nav-bar .container #nav-links ul {
+        padding: 10em 0 2em; }
+        header .nav-bar .container #nav-links ul li {
+          font-size: 1.8em;
+          text-align: center;
+          position: relative; }
+          header .nav-bar .container #nav-links ul li a {
+            display: block;
+            padding: 1em 0;
+            font-size: 14px;
+            font-weight: bold;
+            color: #000;
+            border: none; }
+      header .nav-bar .container #nav-links.popup {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        z-index: 6;
+        -webkit-transition: width .25s ease-in-out, left 0.25s ease-in-out;
+        transition: width .25s ease-in-out, left 0.25s ease-in-out; }
+    header .nav-bar.what-we-do .container svg .st0, header .nav-bar.about-us .container svg .st0, header .nav-bar.contact .container svg .st0, header .nav-bar.blog .container svg .st0 {
+      fill: #fff; }
+    header .nav-bar.what-we-do #nav-icon .line, header .nav-bar.about-us #nav-icon .line, header .nav-bar.contact #nav-icon .line, header .nav-bar.blog #nav-icon .line {
+      background: #fff; }
+
+.hero {
+  background: url(../assets/concert-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin-top: -60px;
+  z-index: 0; }
+  .hero .container h2, .hero .container .headline {
+    position: relative;
+    padding-top: 3em;
+    font-size: 3.6em;
+    color: #89EFC6;
+    z-index: 1; }
+  .hero.index, .hero.clients {
+    background-color: #fff;
+    background-image: url(../assets/index-background.svg);
+    background-position: right -5em bottom;
+    background-repeat: no-repeat;
+    background-size: 200% auto;
+    height: 480px; }
+    .hero.index::after, .hero.clients::after {
+      background-color: transparent; }
+  .hero.blog, .hero.about-us {
+    background-image: url(../assets/people-background.jpg);
+    background-position: top center;
+    background-size: auto 200%; }
+  .hero::after {
+    content: "";
+    position: absolute;
+    background-color: rgba(21, 173, 195, 0.7);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0; }
+
+footer {
+  background-color: #89EFC6;
+  padding: 3em 0;
+  text-align: center; }
 
 /*# sourceMappingURL=main.css.map */

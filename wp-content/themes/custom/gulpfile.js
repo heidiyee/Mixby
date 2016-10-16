@@ -11,7 +11,8 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     bourbon = require("node-bourbon").includePaths,
     neat = require("node-neat").includePaths,
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps = require('gulp-sourcemaps'),
+    concat = require('gulp-concat');
 
 //error handler for plumber
 function onError(err) {
@@ -34,16 +35,12 @@ return gulp.src('_ui/scss/**/*.scss')
         cascade: false
     }))
     .pipe( sourcemaps.write ('.') )
-    .pipe(gulp.dest('_ui/css/'))
+    .pipe(gulp.dest('_ui/css'))
     .pipe(browserSync.reload({
         stream:true
     }))
 
 });
-
-// gulp.task('connect', function() {
-//     connect.server();
-// });
 
 //watches html, css, and js files to reload
 gulp.task('watch', ['browserSync', 'sass'], function() {

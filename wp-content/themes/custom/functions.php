@@ -367,3 +367,23 @@ require get_template_directory() . '/inc/template-tags.php';
  * @since Twenty Fifteen 1.0
  */
 require get_template_directory() . '/inc/customizer.php';
+
+
+//see if page has children pages
+function has_children() {
+    global $post;
+
+    $children = get_pages( array( 'child_of' => $post->ID ) );
+    if( count( $children ) == 0 ) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+//allow svg files
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');

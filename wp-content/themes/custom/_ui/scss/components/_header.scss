@@ -1,0 +1,137 @@
+header {
+    position: relative;
+    z-index: 10;
+
+    .nav-bar {
+        background-color: transparent;
+        height: 60px;
+        padding-top: 20px;
+
+        .container {
+            a {
+                svg {
+                    width: auto;
+                    height: 30px;
+                }
+            }
+
+            #nav-icon {
+                display: inline-block;
+                position: relative;
+                float: right;
+                // top: 3em;
+                width: 2.5em;
+                height: 30px;
+                cursor: pointer;
+                z-index: 20;
+
+                transform: rotate(0deg);
+
+                .line {
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    height: 3.5px;
+                    background: $blue;
+
+                    // border-radius: 1em;
+                    transform: rotate(0deg);
+                    transition: top .2s ease-in-out 0.2s,transform 0.2s ease-in-out, background 0.2s linear, visibility 0.1s ease 0.2s;
+
+                    &:nth-child(1) {
+                        top: 5px;
+                    }
+
+                    &:nth-child(2) {
+                        top: 13px;
+                        visibility: visible;
+                    }
+
+                    &:nth-child(3) {
+                        top: 21px;
+                    }
+                }
+
+                &.open {
+
+                    .line {
+
+                        transition: top 0.2s ease-in-out, transform 0.2s ease-in-out 0.2s, visibility 0.2s ease 0.1s;
+
+                        &:nth-child(1) {
+                            top: 13px;
+                            transform: rotate(45deg);
+
+                        }
+
+                        &:nth-child(2) {
+                            visibility: hidden;
+                        }
+
+                        &:nth-child(3) {
+                            top: 13px;
+                            transform: rotate(-45deg);
+                        }
+                    }
+                }
+            }
+
+            #nav-links {
+                position: absolute;
+                background-color: $white;
+                top: 0;
+                left: 100%;
+                width: 0;
+                height: 100vh;
+                overflow: hidden;
+                z-index: 3;
+                transition: width .25s ease-in-out, left 0.25s ease-in-out;
+
+                ul {
+                    padding: 10em 0 2em;
+
+                    li {
+                        font-size: 1.8em;
+                        text-align: center;
+                        position: relative;
+
+
+                        a {
+                            display: block;
+                            padding: 1em 0;
+                            font-size: 14px;
+                            font-weight: bold;
+                            color: $black;
+
+                            border: none;
+                        }
+                    }
+                }
+                &.popup {
+                    width: 100%;
+                    position: fixed;
+                    left: 0;
+                    z-index: 6;
+
+                    transition: width .25s ease-in-out, left 0.25s ease-in-out;
+                }
+            }
+        }
+
+        &.what-we-do, &.about-us , &.contact, &.blog {
+            .container {
+                svg {
+                    .st0 {
+                        fill: $white;
+                    }
+                }
+            }
+            #nav-icon {
+                .line {
+                    background: $white;
+                }
+            }
+        }
+    }
+}
