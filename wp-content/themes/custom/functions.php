@@ -387,3 +387,9 @@ function cc_mime_types($mimes) {
   return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
+
+//gets first word of title
+function first($title) {
+	$first_word = explode(' ', trim($title));
+	return strtolower($first_word[0]);
+}

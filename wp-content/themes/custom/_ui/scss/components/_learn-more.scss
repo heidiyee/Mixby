@@ -1,0 +1,24 @@
+.learn-more {
+    padding-top: 8em;
+    padding-bottom: 8em;
+    color: $blue;
+    text-align: center;
+
+    .container {
+        h2 {
+            font-size: 3.0em;
+            margin-bottom: 0.25em;
+        }
+
+        a {
+            border: 2px solid $seafoam;
+            border-radius: 2em;
+            color: $seafoam;
+            padding: 1em 3em;
+        }
+
+        p {
+            margin-bottom: 3em;
+        }
+    }
+}

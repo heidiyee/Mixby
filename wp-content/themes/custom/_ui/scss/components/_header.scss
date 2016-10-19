@@ -9,6 +9,9 @@ header {
 
         .container {
             a {
+                position: relative;
+                z-index: 10;
+
                 svg {
                     width: auto;
                     height: 30px;
@@ -78,9 +81,9 @@ header {
             }
 
             #nav-links {
-                position: absolute;
+                position: fixed;
                 background-color: $white;
-                top: 0;
+                top: 46px;
                 left: 100%;
                 width: 0;
                 height: 100vh;
@@ -89,7 +92,7 @@ header {
                 transition: width .25s ease-in-out, left 0.25s ease-in-out;
 
                 ul {
-                    padding: 10em 0 2em;
+                    padding: 7em 0 2em;
 
                     li {
                         font-size: 1.8em;
@@ -110,12 +113,17 @@ header {
                 }
                 &.popup {
                     width: 100%;
-                    position: fixed;
                     left: 0;
                     z-index: 6;
 
                     transition: width .25s ease-in-out, left 0.25s ease-in-out;
                 }
+            }
+
+            &.fixed {
+                position: fixed;
+                left: 0;
+                right: 0;
             }
         }
 
@@ -126,12 +134,31 @@ header {
                         fill: $white;
                     }
                 }
-            }
-            #nav-icon {
-                .line {
-                    background: $white;
+                #nav-icon {
+                    .line {
+                        background: $white;
+                    }
                 }
             }
+        }
+
+        &.blue {
+            .container {
+                svg {
+                    .st0 {
+                        fill: $blue;
+
+                        transition: fill 0.25s linear;
+                    }
+                }
+
+                #nav-icon {
+                    .line {
+                        background: $blue;
+                    }
+                }
+            }
+
         }
     }
 }

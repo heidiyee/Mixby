@@ -18,56 +18,55 @@ $post_slug = $post->post_name;
 				</p>
 			<?php else : ?>
 
-				<h2><?php echo the_title(); ?></h2>
+				<h1><?php echo the_title(); ?></h1>
 			<?php endif; ?>
 
 		</div>
 
 	</section>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<?php if( have_rows('slides') ): ?>
+		<div class="sticky-section">
 
-		<?php if ( have_posts() ) : ?>
+		<?php while( have_rows('slides') ): the_row(); ?>
+			<section class="slides" style="background-image: url(<?php the_sub_field('hand_image') ?>) , url(<?php the_sub_field('slide_background_image') ?>) ">
 
-			<?php if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-					<p>
-						ewijtoiwejtiow
-					</p>
-				</header>
-			<?php endif; ?>
+				<div class="container">
+					<h2 class='offscreen'><?php echo get_field(slide_title); ?></h2>
+					<div class="slide-content">
+						<img src="<?php the_sub_field('icon') ?>" alt="" />
+						<p>
+							<?php the_sub_field('headline'); ?>
+						</p>
+					</div>
+				</div>
+		</section>
+		<?php endwhile; ?>
 
-			<?php
-			// Start the loop.
-			while ( have_posts() ) : the_post();
+	</div>
+	<?php endif; ?>
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'content', get_post_format() );
+	<section class="text-and-pics">
+		<div class="container">
+			<p>
+				<?php echo get_field('text_for_pics'); ?>
+			</p>
+			<img src="<?php echo get_field('pic_first_image'); ?>" alt="" />
+			<img src="<?php echo get_field('pics_second_image'); ?>" alt="" />
+		</div>
+	</section>
 
-			// End the loop.
-			endwhile;
+	<section class="learn-more">
+		<div class="container">
+			<h2><?php echo get_field('link_title'); ?></h2>
+			<p>
+				<?php echo get_field('link_text'); ?>
+			</p>
+			<a href="#"><?php echo get_field('link'); ?></a>
+		</div>
+	</section>
 
-			// Previous/next page navigation.
-			the_posts_pagination( array(
-				'prev_text'          => __( 'Previous page', 'twentyfifteen' ),
-				'next_text'          => __( 'Next page', 'twentyfifteen' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',
-			) );
 
-		// If no content, include the "No posts found" template.
-		else :
-			get_template_part( 'content', 'none' );
 
-		endif;
-		?>
-
-		</main><!-- .site-main -->
-	</div><!-- .content-area -->
 
 <?php get_footer(); ?>

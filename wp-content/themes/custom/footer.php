@@ -13,6 +13,8 @@ Version: 1.0.0
 /_ui/js/jquery-3.0.0.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>
 /_ui/js/menu.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>
+/_ui/js/svg.js"></script>
 	<!-- endbuild -->
 	</div><!-- .site-content -->
 

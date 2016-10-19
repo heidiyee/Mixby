@@ -9,8 +9,15 @@
 //base
 @import "base/reset";
 @import "base/global";
+@import "base/typography";
+
 
 //components
 @import "components/header";
 @import "components/hero";
+@import "components/slides";
+@import "components/text-and-pics";
+@import "components/extra-text";
+@import "components/event-types";
+@import "components/learn-more";
 @import "components/footer";
