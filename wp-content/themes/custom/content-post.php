@@ -5,6 +5,7 @@ Author: Heidi Yee
 Description: Learning Wordpress using Mixby site by customizing new theme based on twentyfifteen theme
 Version: 1.0.0
 */
+get_header();
 ?>
 
 <section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -18,3 +19,4 @@ Version: 1.0.0
 	</div><!-- .entry-content -->
 
 </section><!-- #post-## -->
+<?php get_footer(); ?>

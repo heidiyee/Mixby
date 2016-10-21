@@ -22,7 +22,9 @@ $post_slug = $post->post_name;
 </head>
 
 <body <?php body_class(); ?>>
-    <h1 class="offscreen">Mixby Website</h1>
+	<?php if (is_front_page()) : ?>
+    	<h1 class="offscreen">Mixby</h1>
+	<?php endif; ?>
 	<header>
 		<nav class="nav-bar <?php echo $post_slug ?>">
 	        <div class="container">

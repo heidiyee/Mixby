@@ -1,7 +1,7 @@
 .text-and-pics {
     .container {
         p {
-            margin: 5em auto;
+            margin: 50px auto;
             font-size: 1.4em;
             float: none;
         }
@@ -10,5 +10,9 @@
             display: block;
             width: 100%;
         }
+    }
+
+    &.extra-padding {
+        padding-bottom: 5em;
     }
 }

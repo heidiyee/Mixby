@@ -9,12 +9,12 @@ Version: 1.0.0
 
 ?>
 	<!-- linking js right before closing body -->
-	<script src="<?php echo get_template_directory_uri(); ?>
-/_ui/js/jquery-3.0.0.min.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>
-/_ui/js/menu.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>
-/_ui/js/svg.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/_ui/js/jquery-3.0.0.min.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/_ui/js/owl.carousel.min.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/_ui/js/svg.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/_ui/js/menu.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/_ui/js/svg.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/_ui/js/owl.carousel.js"></script>
 	<!-- endbuild -->
 	</div><!-- .site-content -->
 

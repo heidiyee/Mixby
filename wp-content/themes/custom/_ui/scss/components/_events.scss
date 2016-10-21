@@ -1,0 +1,48 @@
+.events {
+    background-color: $seafoam;
+    color: $blue;
+    text-align: center;
+    padding-top: 5em;
+    padding-bottom: 5em;
+
+    .container {
+        a {
+            @include border($blue);
+            color: $blue;
+        }
+
+        h2 {
+            font-size: 1.6em;
+            margin-bottom: 1.5em;
+        }
+
+        h3 {
+            font-size: 1.6em;
+            color: $white;
+            width: 70%;
+            margin: 0.5em auto;
+        }
+
+        p {
+            text-align: left;
+        }
+
+        form {
+            margin: 40px 0 60px;
+
+            input {
+                padding: 1em 2em;
+                border: 0;
+                width: 200px;
+            }
+        }
+
+        .slides {
+            // margin-bottom: 20px;
+            p.date {
+                text-align: center;
+                font-size: 1.0em;
+            }
+        }
+    }
+}

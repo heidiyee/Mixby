@@ -1,0 +1,28 @@
+.job-post {
+    padding-top: 3em;
+    padding-bottom: 5em;
+    text-align: center;
+
+    .container {
+        p.title {
+            margin-bottom: 2em;
+        }
+
+        .content {
+            margin-bottom: 4em;
+            text-align: left;
+            white-space: pre-wrap;
+
+            p {
+                width: 100%;
+            }
+
+            ul {
+                li {
+                    font-size: 1.4em;
+                    color: $blue;
+                }
+            }
+        }
+    }
+}

@@ -1,3 +1,17 @@
+a {
+    @include border($seafoam);
+    border-radius: 2em;
+    color: $seafoam;
+    padding: 1em 3em;
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    background-color: $blue;
+    margin: 60px 0;
+}
+
 //--------Classes----------
 .offscreen {
     display: block;
