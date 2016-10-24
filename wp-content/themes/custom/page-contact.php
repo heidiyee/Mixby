@@ -38,18 +38,22 @@ $post_slug = $post->post_name;
 <?php endif; ?>
 
 <section class="contact-info">
-    <h2>Shoot Us an Email</h2>
-    <p>
-        <?php echo get_field('email'); ?>
-    </p>
-    <h2>Give Us a Jingle</h2>
-    <p>
-        <?php echo get_field('number'); ?>
-    </p>
-    <h2>Visit Our Office</h2>
-    <p>
-        <?php echo get_field('address'); ?>
-    </p>
+    <div class="container">
+        <h2>Shoot Us an Email</h2>
+        <p>
+            <?php echo get_field('email'); ?>
+        </p>
+        <h2>Give Us a Jingle</h2>
+        <p>
+            <?php echo get_field('number'); ?>
+        </p>
+        <h2>Visit Our Office</h2>
+        <p>
+            <?php echo get_field('address'); ?>
+        </p>
+    </div>
+
+    <img src="<?php echo get_field('map') ?>" alt="" />
 </section>
 
 
@@ -59,7 +63,7 @@ $post_slug = $post->post_name;
         <p>
             <?php echo get_field('link_text'); ?>
         </p>
-        <a href="#"><?php echo get_field('link'); ?></a>
+        <a href="blog"><?php echo get_field('link'); ?></a>
     </div>
 </section>
 

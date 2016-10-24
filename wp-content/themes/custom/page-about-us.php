@@ -87,7 +87,7 @@ $post_slug = $post->post_name;
 			if ( $the_query->have_posts()) : ?>
 				<ul>
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-						<a href="<?php echo get_the_permalink()?>" rel="bookmark">
+						<a href="<?php echo get_the_permalink()?>">
 							<li class="team-member">
 
 								<img src="<?php echo get_field('team_member_picture')?>" alt="<?php echo get_field('team_member_name') ?>" />
