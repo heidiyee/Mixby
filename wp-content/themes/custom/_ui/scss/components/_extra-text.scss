@@ -1,0 +1,14 @@
+.extra-text {
+    margin-top: 5em;
+    margin-bottom: 5em;
+
+    .container {
+        p {
+            width: 100%;
+        }
+    }
+
+    &.margin-top {
+        margin-top: 0;
+    }
+}

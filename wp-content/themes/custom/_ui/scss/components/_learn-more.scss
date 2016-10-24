@@ -1,0 +1,17 @@
+.learn-more {
+    padding-top: 5em;
+    padding-bottom: 5em;
+    color: $blue;
+    text-align: center;
+
+    .container {
+        h2 {
+            font-size: 3.0em;
+            margin-bottom: 0.25em;
+        }
+
+        p {
+            margin-bottom: 3em;
+        }
+    }
+}

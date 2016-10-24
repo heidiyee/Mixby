@@ -1,0 +1,18 @@
+.text-and-pics {
+    .container {
+        p {
+            margin: 50px auto;
+            font-size: 1.4em;
+            float: none;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &.extra-padding {
+        padding-bottom: 5em;
+    }
+}

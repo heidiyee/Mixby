@@ -1,0 +1,60 @@
+.hero {
+    background: url(../assets/concert-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-top: -60px;
+    z-index: 0;
+
+    .container {
+        h1, .headline {
+            position: relative;
+            padding-top: 3em;
+            font-size: 3.6em;
+            color: $seafoam;
+            z-index: 1;
+        }
+    }
+
+    &.index {
+        background-color: $white;
+        background-image: url(../assets/index-background.svg);
+        background-position: right -4em bottom;
+        background-repeat: no-repeat;
+        background-size: 150% auto;
+        height: 100vh;
+
+        &::after {
+            background-color: transparent;
+        }
+    }
+
+    &.clients {
+        background-color: $white;
+        background-image: none;
+        text-align: center;
+
+        &::after {
+            background-color: transparent;
+        }
+    }
+
+    &.blog, &.about-us {
+        background-image: url(../assets/people-background.jpg);
+        background-position: top center;
+        background-size: auto 200%;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        background-color: $seafoam-background;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+}
