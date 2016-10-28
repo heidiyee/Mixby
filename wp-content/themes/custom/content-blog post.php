@@ -8,7 +8,7 @@ Version: 1.0.0
 ?>
 
     <section class="blog-posts top-padding">
-        <div class="container">
+        <div class="container bloggin">
             <p class="date">
                 <?php echo get_the_date(); ?>
             </p>

@@ -17,12 +17,41 @@
             color: $seafoam;
             z-index: 1;
         }
+
+        a {
+            position: relative;
+            display: block;
+            border: none;
+            color: $blue;
+            padding-left: 0;
+            font-size: 1.4em;
+            margin-top: 2em;
+            z-index: 1;
+
+            &::before {
+                content: "\e900";
+                font-size: 2.0em;
+                padding-right: 5px;
+                vertical-align: middle;
+                font-family: 'icomoon' !important;
+                speak: none;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+
+                /* Better Font Rendering =========== */
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+        }
     }
 
     &.index {
         background-color: $white;
         background-image: url(../assets/index-background.svg);
-        background-position: right -4em bottom;
+        background-position: right -20px bottom;
         background-repeat: no-repeat;
         background-size: 150% auto;
         height: 100vh;
@@ -30,22 +59,18 @@
         &::after {
             background-color: transparent;
         }
-    }
 
-    &.clients {
-        background-color: $white;
-        background-image: none;
-        text-align: center;
-
-        &::after {
-            background-color: transparent;
+        .container {
+            .headline {
+                margin: 0;
+            }
         }
     }
 
     &.blog, &.about-us {
         background-image: url(../assets/people-background.jpg);
         background-position: top center;
-        background-size: auto 200%;
+        background-size: cover;
     }
 
     &::after {
@@ -56,5 +81,35 @@
         width: 100%;
         top: 0;
         left: 0;
+    }
+}
+
+@media only screen and (max-height: $iphone5-height) {
+    .hero {
+        &.index {
+            height: $iphone5-height;
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .hero {
+        height: 300px;
+
+        .container {
+            h1, .headline {
+                font-size: 4.8em;
+            }
+
+            a {
+                position: absolute;
+                bottom: 5em;
+            }
+        }
+
+        &.index {
+            background-position: right bottom;
+            background-size: contain;
+        }
     }
 }

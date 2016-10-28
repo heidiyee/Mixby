@@ -68,3 +68,19 @@
         }
     }
 }
+
+@media only screen and (min-width: 600px) {
+    .event-types {
+        .info-block {
+            @include span-columns(6);
+
+            &:nth-child(2n-1) {
+                @include omega();
+            }
+
+            &:nth-child(2n) {
+                clear: both;
+            }
+        }
+    }
+}

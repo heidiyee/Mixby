@@ -1,4 +1,4 @@
-$max-width: 1080px;
+$max-width: 980px;
 
 //used mostly on divs to be the outer container of the section
 .container {
@@ -7,23 +7,7 @@ $max-width: 1080px;
     padding-right: 20px;
 }
 
-//for individual project pages
-.headings {
-    @include span-columns(12);
-}
-
-.to-the-right {
-    @include span-columns(12);
-}
-
-@media only screen and (min-width: 750px) {
-    .headings {
-        @include span-columns(4);
-    }
-
-    .to-the-right {
-        @include span-columns(7);
-        @include shift(1);
-        padding-top: 35px;
-    }
+@mixin omega-reset($nth) {
+  &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+  &:nth-child(#{$nth}+1) { clear: none }
 }

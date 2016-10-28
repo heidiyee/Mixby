@@ -5,6 +5,7 @@
 
     .container {
 
+        // styling for individual blog post when someone clicks to see more details
         img {
             width: 100%;
         }
@@ -13,6 +14,7 @@
             white-space: pre-wrap;
         }
 
+        //date is used in both pages
         p.date {
             font-size: 1.0em;
             padding-bottom: 0.2em;
@@ -28,6 +30,7 @@
             margin: 2em 0;
         }
 
+        //styling for blog post blocks on the blog page
         .blog-post {
             text-align: left;
             margin-bottom: 5em;
@@ -35,6 +38,7 @@
             a {
                 border: none;
                 padding: 0;
+                height: 100%;
             }
 
             h2 {
@@ -55,9 +59,39 @@
 
             cursor: pointer;
         }
+
+
+        &.bloggin {
+            max-width: 500px;
+        }
     }
 
     &.top-padding {
         padding-top: 3em;
+    }
+}
+
+@media only screen and (min-width:550px) {
+    .blog-posts {
+        .container {
+            .blog-post {
+                max-height: 300px;
+                overflow: auto;
+
+                a {
+                    width: 100%;
+                }
+
+                .headings {
+                    @include span-columns(6);
+                }
+
+                img {
+                    @include span-columns(4);
+                    @include omega();
+                    @include shift(2);
+                }
+            }
+        }
     }
 }
