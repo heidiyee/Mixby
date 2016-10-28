@@ -5,7 +5,11 @@ Author: Heidi Yee
 Description: Learning Wordpress using Mixby site by customizing new theme based on twentyfifteen theme
 Version: 1.0.0
 */
+
+// this is for individual team member's page
 ?>
+
+
 
     <section class="team-members">
         <div class="container">

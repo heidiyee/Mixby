@@ -85,7 +85,7 @@ header {
             #nav-links {
                 position: fixed;
                 background-color: $white;
-                top: 46px;
+                top: 0;
                 left: 100%;
                 width: 0;
                 height: 100vh;
@@ -94,7 +94,7 @@ header {
                 transition: width .25s ease-in-out, left 0.25s ease-in-out;
 
                 ul {
-                    padding: 7em 0 2em;
+                    padding: 8em 0 2em;
 
                     li {
                         font-size: 1.8em;
@@ -106,7 +106,6 @@ header {
                             display: block;
                             padding: 1em 0;
                             font-size: 14px;
-                            font-weight: bold;
                             color: $black;
 
                             border: none;
@@ -161,6 +160,60 @@ header {
                 }
             }
 
+        }
+    }
+
+}
+
+@media only screen and (min-width: 500px) {
+    header {
+
+        .nav-bar {
+
+            .container {
+
+                #nav-icon {
+                    display: none;
+                }
+
+                #nav-links {
+                    position: relative;
+                    left: auto;
+                    width: auto;
+                    height: auto;
+                    float: right;
+                    top: 50%;
+                    transform: translateY(50%);
+
+                    ul {
+                        padding: 0;
+
+                        li {
+                            display: inline-block;
+
+                            a {
+                                padding: 0 1em;
+                                color: $blue;
+                            }
+                        }
+                    }
+                }
+            }
+            &.what-we-do, &.about-us , &.contact, &.blog {
+                .container {
+
+                    #nav-links {
+                        background-color: transparent;
+                        ul {
+                            li {
+                                a {
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

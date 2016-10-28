@@ -16,3 +16,21 @@
         padding-bottom: 5em;
     }
 }
+
+@media only screen and (min-width: 600px) {
+    .text-and-pics {
+        .container {
+            p {
+                font-size: 1.6em;
+            }
+
+            img {
+                @include span-columns(6);
+                width: 50%;
+                height: 275px;
+                margin-right: 0;
+                object-fit: cover;
+            }
+        }
+    }
+}

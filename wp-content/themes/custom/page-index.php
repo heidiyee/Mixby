@@ -16,6 +16,7 @@ $post_slug = $post->post_name;
 				<p class="headline">
 					<?php echo get_field('hero_text'); ?>
 				</p>
+				<a href="#">Learn More</a>
 			<?php else : ?>
 
 				<h1><?php echo the_title(); ?></h1>
